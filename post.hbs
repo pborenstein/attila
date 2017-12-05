@@ -15,7 +15,7 @@
 			</span>
 			{{else}}
 			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> <i class="ic ic-arrow-left"></i> <i class="ic ic-arrow-left"></i> Home</a>
 			</span>
 			{{/if}}
 			{{#if @blog.navigation}}
@@ -25,7 +25,7 @@
 			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
-		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+		<span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}"></time></span>
 		{{#if image}}<div class="post-cover cover" style="background-image: url('{{image}}');"></div>{{/if}}
 	</div>
 </header>
@@ -59,6 +59,7 @@
 				
 				<div class="clear"></div>
 				
+<!-- 
 				{{#author}}
 				<aside class="post-author">
 					{{#if image}}
@@ -81,6 +82,7 @@
 					<div class="clear"></div>
 				</aside>
 				{{/author}}
+ -->
 
 			</section>
 			
@@ -91,6 +93,7 @@
 
 			</section>
 
+<!-- 
 			<aside class="post-nav">
 				{{#next_post}}
 					<a class="post-nav-next" href="{{url}}">
@@ -112,6 +115,7 @@
 				{{/prev_post}}
 				<div class="clear"></div>
 			</aside>
+ -->
 
 
 		</div>
