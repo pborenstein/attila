@@ -1,8 +1,8 @@
 {
-	"name": "attila",
+	"name": "attila-nmr",
 	"description": "Ghost Theme",
 	"demo": "http://attila.zutrinken.com",
-	"version": "1.4.0",
+	"version": "1.4.0-nmr",
 	"engines": {
 		"ghost": ">=1.0.0"
 	},
@@ -29,7 +29,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/zutrinken/attila.git"
+		"url": "https://github.com/pborenstein/attila.git"
 	},
 	"devDependencies": {
 		"autoprefixer-core": "^5.2.1",
