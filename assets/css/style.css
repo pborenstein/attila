@@ -481,11 +481,13 @@ blockquote {
   margin: 2em auto;
   padding: 1em;
   box-sizing: border-box;
-  border-left: 0.25em solid #e5e4e1;
-  font-style: italic;
+  border-left: 0.0em solid #e5e4e1;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.75em;
+  line-height: 1.5em;
   font-weight: 400;
   color: #45484d;
-  background: #faf9f7; }
+  background: #ffffff; }
 
 blockquote p {
   margin: 1em auto; }
