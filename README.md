@@ -2,6 +2,8 @@
 
 A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/).
 
+Adapted for [Nixes Mate Review](http://nixesmate.pub)
+
 ## Demo
 
 * [Blog](http://attila.zutrinken.com/)
