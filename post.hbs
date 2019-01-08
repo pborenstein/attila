@@ -29,7 +29,7 @@
 		  {{!--
 		    Posts are issue covers, so we don't need the author/date
 
-		    {{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+		    {{authors}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
 		  --}}
 		</span>
 		{{#if feature_image}}<div class="post-cover cover" style="background-image: url('{{feature_image}}');"></div>{{/if}}
@@ -66,7 +66,7 @@
 				<div class="clear"></div>
 				
 <!-- 
-				{{#author}}
+				{{#primary_author}}
 				<aside class="post-author">
 					{{#if profile_image}}
 						<figure class="post-author-avatar">
