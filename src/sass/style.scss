@@ -70,34 +70,40 @@ h1 {
 	font-size: 2em;
 	line-height: 1em;
 	text-indent: -1px;
-	margin: 2em 0 -0.5em;
+	margin: 1em 0 1em;
 }
 
 h2 {
 	font-size: 1.75em;
 	line-height: 1.111em;
 	text-indent: -1px;
-	margin: 2.286em 0 -0.571em;
+	margin: 1.143em 0 1.143em;
 }
 
 h3 {
 	font-size: 1.5em;
 	line-height: 1.334em;
-	margin: 2em 0 -0.667em;
+	margin: 1em 0 1em;
 }
 
 h4 {
 	font-size: 1.25em;
 	line-height: 1.2em;
-	margin: 2.4em 0 -0.8em;
+	margin: 1.2em 0 1.2em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	font-weight: inherit;
 }
 
-p, ul, ol {
-    margin: 2em auto;
+p {
+    margin: 0 0 2em;
+}
+
+ul, ol {
+    margin: 0 0 2em;
+    padding-left: 2em;
+    box-sizing: border-box;
 }
 
 ul {
@@ -139,14 +145,14 @@ ol ol, ul ul, ul ol, ol ul {
 hr {
     display: block;
     height: 1px;
-    margin: 2em 0;
+    margin: 0 0 2em;
     padding: 0;
-	background: $color-gray-90;
+	  background: $color-gray-90;
     border: 0;
 }
 
 blockquote {
-    margin: 2em auto;
+    margin: 0 0 2em;
     padding: 1em;
     box-sizing: border-box;
     border-left: 0.0em solid #e5e4e1;
@@ -159,7 +165,7 @@ blockquote {
 }
 
 blockquote p {
-	margin: 1em auto;
+	margin: 0 0 1em;
 }
 blockquote p:first-child {
 	margin-top: 0;
@@ -183,22 +189,30 @@ small {
 
 
 dl {
-    margin: 20px 0;
+    margin: 0 0 2em;
+    padding-left: 30px;
 }
 dl dt {
-    float: left;
-    width: 180px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-family: 'Fira Sans', sans-serif;
+  	font-weight: 500;
+  	font-size: 0.75em;
+  	line-height: 1.25em;
+    font-weight: 700;
+    color: $color-black;
+    margin-bottom: 0.334em;
+}
+dl dt:before {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1px;
+    margin-left: -30px;
+    margin-top: 0.5em;
+    background: $color-blue-80;
 }
 dl dd {
-    margin-left: 200px;
-    margin-bottom: 12px;
+    margin-left: 0;
+    margin-bottom: 1em;
 }
 
 mark {
@@ -208,23 +222,23 @@ code, tt {
 	position: relative;
 	margin: 0 0.334em;
 	padding: 0.334em 0.667em;
-	font-family: 'Inconsolata', monospace, sans-serif;
+	font-family: monospace, sans-serif;
 	font-size: 0.75em;
 	white-space: pre;
 	background: $color-gray-98;
-    border: 1px solid $color-gray-90;
+  border: 1px solid $color-gray-90;
 	top: -2px;
 }
 
 pre {
 	position: relative;
-	margin: 2em auto;
+	margin: 0 0 2em;
 	padding: 1em;
 	overflow: hidden;
-	font-family: 'Inconsolata', monospace, sans-serif;
+	font-family: monospace, sans-serif;
 	white-space: pre;
 	background: $color-gray-98;
-    border: 1px solid $color-gray-90;
+  border: 1px solid $color-gray-90;
 	box-sizing: border-box;
 }
 pre .lines {
@@ -248,17 +262,23 @@ pre .lines .line {
 }
 
 pre code, pre tt {
+  display: block;
 	position: static;
 	top: auto;
 	margin: -1.334em -1.334em -1.334em 1.334em;
 	padding: 1.334em;
-	overflow: scroll;
+  overflow-x: auto;
 	font-size: 0.75em;
 	line-height: 2em;
 	white-space: pre;
 	background: transparent;
 	border: none;
 	vertical-align: inherit;
+}
+pre code.language-text {
+  overflow: hidden;
+  white-space: normal;
+  margin-left: -1.334em;
 }
 
 kbd {
@@ -278,7 +298,7 @@ kbd {
 table {
 	width: 100%;
 	max-width: 100%;
-	margin: 2em 0;
+	margin: 0 0 2em;
 	background-color: transparent;
 	border: 1px solid $color-gray-90;
 }
@@ -316,10 +336,106 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	margin: 2.5em auto;
+	margin: 0 0 2em;
 }
+
+img[src$="#full"] {
+  max-width: none;
+  width: 100vw;
+  margin: 3em 0;
+}
+
+.kg-image-card {
+  margin: 0 0 2em;
+  max-width: none !important;
+
+  &.kg-width-wide {
+    max-width: 48em !important;
+    min-width: 100%;
+    width: 75vw;
+  }
+
+  &.kg-width-full {
+    max-width: none;
+    width: 100vw;
+    margin-top: 2em;
+  }
+
+  .kg-image {
+    margin: 0 auto;
+  }
+
+  figcaption {
+    font-family: 'Fira Sans', sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+  	font-size: 0.75em;
+  	line-height: 1.25em;
+  	padding: 0.667em 0;
+  }
+
+  .kg-image-full + figcaption {
+    margin-bottom: 1.334em;
+  }
+}
+
+.kg-gallery-card {
+  margin: 0 0 2em;
+  max-width: 48em !important;
+  min-width: 100%;
+  width: 75vw;
+
+  figcaption {
+    font-family: 'Fira Sans', sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+  	font-size: 0.75em;
+  	line-height: 1.25em;
+  	padding: 0.667em 0;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}
+
+.kg-embed-card {
+  margin: 0 0 2em;
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .fluid-width-video-wrapper {
-	margin: 2.5em auto;
+	margin: 0 0 2em;
 }
 
 .clear {
@@ -335,6 +451,40 @@ img {
 	}
 	100% {
 		opacity: .9;
+	}
+}
+
+.avatar {
+	position: relative;
+	overflow: hidden;
+	background: $color-gray-95;
+	margin: 0;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: 50%;
+		height: 50%;
+		bottom: 35%;
+		left: 25%;
+		border-radius: 100%;
+		background: $color-gray-90;
+	}
+
+	&:after {
+		width: 100%;
+		bottom: -25%;
+		left: 0;
+	}
+
+	img {
+		position: relative;
+		z-index: 2;
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -802,10 +952,9 @@ img {
 	font-size: 0.5em;
 	font-style: normal;
 	font-weight: normal;
-	content: '\e800';
-	color: inherit;
+	content: '\e808';
+	color: $color-yellow-100;
 	text-align: center;
-	color: $color-gray-90;
 }
 
 /* ==========================================================================
@@ -896,7 +1045,7 @@ img {
 	font-size: 0.75em;
 	font-weight: 400;
 	line-height: 1.334em;
-	opacity: 0.5;
+  color: $color-blue-60;
 }
 .has-cover .post-meta {
 	color: $color-white;
@@ -918,6 +1067,25 @@ img {
 .post-excerpt p {
 	margin: 0.5em 0 0;
 }
+.post-content {
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-content > * {
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
 .post-content a {
 	border-bottom: 1px solid $primary-color;
 }
@@ -925,20 +1093,13 @@ img {
 .post-content a:focus {
 	color: $primary-color;
 }
-.post-content img,
-.post-content .fluid-width-video-wrapper {
-	max-width: none;
-	width: 110%;
-	margin-left: -5%;
-}
-
 
 /* ==========================================================================
    Post Info
    ========================================================================== */
 
 .post-info {
-	margin-top: 6em;
+	margin-top: 2em;
 	overflow: hidden;
 }
 .post-share {
@@ -1019,6 +1180,7 @@ img {
 	border-top: 1px solid $color-gray-90;
 	border-bottom: 1px solid $color-gray-90;
 	clear: both;
+  font-family: 'Fira Sans', sans-serif;
 }
 .post-author-avatar {
 	position: relative;
@@ -1027,7 +1189,6 @@ img {
 	height: 5em;
 	margin: -0.5em 0 0 1.5em;
 	overflow: hidden;
-	background: $color-white;
 	border-radius: 10em;
 	box-sizing: border-box;
 
@@ -1035,7 +1196,7 @@ img {
 		width: 4em;
 		height: 4em;
 		margin: 0 1em 1em 0
-    }
+  }
 }
 .post-author-avatar img {
 	width: 100%;
@@ -1045,20 +1206,19 @@ img {
 }
 .post-author-bio {
 	padding-left: 10em;
-	font-family: 'Fira Sans', sans-serif;
-    font-size: 0.75em;
-    line-height: 1.334em;
-    
-    @media only screen and (max-width: 480px) {
-	    padding-left: 0;
-    }
+  font-size: 0.75em;
+  line-height: 1.334em;
+
+  @media only screen and (max-width: 480px) {
+    padding-left: 0;
+  }
 }
 .post-author-name {
 	margin: 0;
 	padding: 0;
-    font-size: 1.334em;
-    line-height: 1em;
-    text-indent: inherit;
+  font-size: 1.334em;
+  line-height: 1em;
+  text-indent: inherit;
 }
 .post-author-about {
 	margin: 0.667em 0 0.334em;
@@ -1084,6 +1244,32 @@ img {
 .post-author-bio a:hover,
 .post-author-bio a:focus {
 	text-decoration: underline;
+}
+
+/* ==========================================================================
+   Post Authors
+   ========================================================================== */
+
+.post-authors {
+	position: relative;
+	margin: 2em 0 0;
+	padding: 2em 0;
+	z-index: 10;
+	border-top: 1px solid $color-gray-90;
+	border-bottom: 1px solid $color-gray-90;
+	clear: both;
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+}
+.post-authors-info {
+  margin: 0 0 0.334em;
+  font-size: 0.75em;
+  line-height: 1.334em;
+}
+.post-authors-authors {
+  margin: 0;
+	padding: 0;
+  text-indent: inherit;
 }
 
 /* ==========================================================================
@@ -1136,13 +1322,13 @@ img {
 	text-align: center;
 	border-bottom: 1px solid $color-gray-90;
 	box-sizing: border-box;
-	
+
 	p {
 		margin: 1.25em 0 0;
 		font-size: 0.8em;
 		line-height: 1.25em;
 	}
-	
+
 	.post-subscribe-form {
 		display: flex;
 		justify-content: center;
@@ -1159,11 +1345,11 @@ img {
 			box-shadow: none;
 			box-sizing: border-box;
 			border-radius: 4em 0 0 4em;
-			
+
 			&:hover {
 				border-color: $color-blue-60;
 			}
-			
+
 			&:focus {
 				border-color: $color-red-95;
 			}
@@ -1174,7 +1360,7 @@ img {
 			font-size: 0.8em;
 			height: 2.5em;
 			padding: 0 1em;
-			font-weight: 500; 
+			font-weight: 500;
 			color: $color-white;
 			background: $color-red-95;
 			border: 0;

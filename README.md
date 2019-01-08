@@ -57,4 +57,4 @@ Build Grunt project:
 
 ## Copyright & License
 
-Copyright (C) 2015-2017 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+Copyright (C) 2015-2019 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).

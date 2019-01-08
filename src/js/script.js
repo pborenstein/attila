@@ -11,19 +11,19 @@ jQuery(function($) {
 	function menu() {
 		html.toggleClass('menu-active');
 	};
-	
+
 	$('#menu').on({
 		'click': function() {
 			menu();
 		}
 	});
-	
+
 	$('.menu-button').on({
 		'click': function() {
 			menu();
 		}
 	});
-	
+
 	$('.hidden-close').on({
 		'click': function() {
 			menu();
@@ -33,7 +33,7 @@ jQuery(function($) {
 	/* ==========================================================================
 	   Parallax cover
 	   ========================================================================== */
-	   
+
 	var cover = $('.cover');
 	var coverPosition = 0;
 
@@ -67,7 +67,7 @@ jQuery(function($) {
 	   ========================================================================== */
 
 	var post = $('.post-content');
-	
+
 	function readingProgress() {
 		if(post.length >= 1) {
 			var postBottom = post.offset().top + post.height();
@@ -92,19 +92,38 @@ jQuery(function($) {
 	});
 
 	/* ==========================================================================
+	   Gallery
+	   ========================================================================== */
+
+	function gallery() {
+		var images = document.querySelectorAll('.kg-gallery-image img');
+		images.forEach(function (image) {
+			var container = image.closest('.kg-gallery-image');
+			var width = image.attributes.width.value;
+			var height = image.attributes.height.value;
+			var ratio = width / height;
+			container.style.flex = ratio + ' 1 0%';
+		});
+	}
+	gallery();
+
+	/* ==========================================================================
 	   Style code blocks with highlight and numbered lines
 	   ========================================================================== */
 
 	function codestyling() {
 		$('pre code').each(function(i, e) {
 			hljs.highlightBlock(e);
-			var code = $(this);
-			var lines = code.html().split(/\n/).length;
-			var numbers = [];
-			for (i = 1; i < lines; i++) {
-				numbers += '<span class="line">' + i + '</span>';
+
+			if(!$(this).hasClass('language-text')) {
+				var code = $(this);
+				var lines = code.html().split(/\n/).length;
+				var numbers = [];
+				for (i = 1; i < lines; i++) {
+					numbers += '<span class="line">' + i + '</span>';
+				}
+				code.parent().append('<div class="lines">' + numbers + '</div>');
 			}
-			code.parent().append('<div class="lines">' + numbers + '</div>');
 		});
 	}
 	codestyling();
@@ -117,11 +136,11 @@ jQuery(function($) {
 		$('#wrapper').fitVids();
 	}
 	video();
-	
+
 	/* ==========================================================================
 	   Initialize and load Disqus
 	   ========================================================================== */
-	
+
 	if (typeof disqus === 'undefined') {
 		$('.post-comments').css({
 			'display' : 'none'
